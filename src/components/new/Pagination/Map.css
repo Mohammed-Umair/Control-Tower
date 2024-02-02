@@ -1,0 +1,18 @@
+.map {
+    height: 800px;
+    width: 100%;
+  }
+  
+  .custom-tooltip {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 5px 10px;
+    border-radius: 20px;
+    min-width: 150px;
+    height: 50px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
