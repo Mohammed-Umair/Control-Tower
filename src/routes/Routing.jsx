@@ -8,11 +8,6 @@ import NewTablePage from '../components/new/NewTablePage'
 import PoExucation from '../components/pages/PoExucation'
 import CustomizedAccordions from '../components/Accordion'
 
-
-
-
-
-
 const Routing = () => {
   return (
     <BrowserRouter>

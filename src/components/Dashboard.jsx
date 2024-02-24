@@ -1,4 +1,4 @@
-import { Box, Button, Container, Divider, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 
 import DashboardCards from "./common/DashboardCards";
@@ -7,12 +7,15 @@ import { useNavigate } from "react-router";
 import Header from "./common/Header";
 import RightSider from "./common/RightSider";
 import SubHeader from "./common/SubHeader";
+import NewSubHeader from "./common/NewSubHeader";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+
   const navigateToKPI1 = () => {
     navigate("/KPI1");
   };
+
   const navigateToKPI2 = () => {
     navigate("/KPI2");
   };
@@ -21,64 +24,58 @@ const Dashboard = () => {
     <>
       <Header />
 
-      <Grid container sx={{ p: 2 }}>
-        <Grid item xs={1} sm={3} md={3} lg={3}>
-       
-           <RightSider />
+      <Grid container sx={{ p: "0" }}>
+        <Grid item xs={2} sm={2} md={3} lg={3}>
+          <RightSider />
         </Grid>
-        <Grid item xs={11} sm={9} md={9} lg={9}>
-          <SubHeader/>
+        <Grid item xs={10} sm={10} md={9} lg={9}>
+        <NewSubHeader />
+
           <Typography
-          variant="h6"
-          component="p"
-          sx={{
-            
-           mt:2,
-            fontSize: {
-              xs: "14px",
-              sm: "14px",
-              md: "20px",
-              lg: "20px",
-            },
-           
-          }}
-        >
-          Hello, Siddrath Roy
-        </Typography>
+            variant="h6"
+            component="p"
+            sx={{
+              mt: 2,
+              ml:2,
+              fontSize: {
+                xs: "14px",
+                sm: "14px",
+                md: "20px",
+                lg: "20px",
+              },
+            }}
+          >
+            Hello, Siddrath Roy
+          </Typography>
 
           <Box
             sx={{
               marginTop: "0px",
-              // padding: "05px 20px 10px 20px",
+              display: "flex",
+              justifyContent: "center",
             }}
           >
             <Box
               sx={{
-                //   border: "1px solid black",
-                // width: "900px",
                 display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
+                justifyContent: "center",
                 flexWrap: "wrap",
                 padding: {
-                  xs: "20px 50px",
-                  sm: "20px 50px",
-                  md: "20px 20px",
-                  lg: "20px 20px",
+                  xs: "20px 10px",
+                  sm: "20px 20px",
+                  md: "20px 50px",
+                  lg: "20px 50px",
                 },
                 margin: "10px",
               }}
             >
-              {dashboardCardsData?.map((item, index) => {
-                console.log("dashboardCardsData", dashboardCardsData);
-                return <DashboardCards key={index} item={item} />;
-              })}
+              {dashboardCardsData?.map((item, index) => (
+                <DashboardCards key={index} item={item} />
+              ))}
             </Box>
           </Box>
         </Grid>
       </Grid>
-
-      
     </>
   );
 };
